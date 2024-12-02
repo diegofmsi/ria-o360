@@ -31,69 +31,71 @@
             <img src="./images/mapa-ruta.jpeg" alt="Mapa del recorrido de Riaño 360" class="map-image">
             <p>Conoce el recorrido y los puntos clave del trayecto que pasa por Vegacerneja, Liegos, Salamón, Las Salas, Horcadas, Carande y Boca de Huérgano.</p>
         </div>
-        <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=62876645&elevation=off&images=off&maptype=H" width="600" height="500"></iframe><div style="color:#777;font-size:11px;line-height:16px;">Powered by&nbsp;<a style="color:#4C8C2B;font-size:11px;line-height:16px;" target="_blank" href="https://es.wikiloc.com">Wikiloc</a></div>
-        <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=193125318&elevation=off&images=off&maptype=H" width="600" height="500"></iframe><div style="color:#777;font-size:11px;line-height:16px;">Powered by&nbsp;<a style="color:#4C8C2B;font-size:11px;line-height:16px;" target="_blank" href="https://es.wikiloc.com">Wikiloc</a></div>
-        <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=193444607&elevation=off&images=off&maptype=H" width="600" height="500"></iframe><div style="color:#777;font-size:11px;line-height:16px;">Powered by&nbsp;<a style="color:#4C8C2B;font-size:11px;line-height:16px;" target="_blank" href="https://es.wikiloc.com">Wikiloc</a></div>
+         <!-- Sección de Tracks -->
+    <section class="tracks">
+      <div class="container">
+          <h2>Tracks Destacados</h2>
+          <p>Descubre rutas y tracks detallados para que puedas explorar Riaño 360 con toda la información necesaria.</p>
+      </div>
+  </section>
+        <div class="maps-iframe">
+            <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=62876645&elevation=off&images=off&maptype=H" width="600" height="500"></iframe>
+            <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=193125318&elevation=off&images=off&maptype=H" width="600" height="500"></iframe>
+            <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=193444607&elevation=off&images=off&maptype=H" width="600" height="500"></iframe>
+        </div>
     </section>
 
     <!-- Galería de imágenes -->
     <section class="gallery">
         <div class="container">
             <h2>Galería de Imágenes</h2>
-            <div class="gallery">
+            <div class="gallery-images">
                 <img src="./images/imagen1.jpg" class="gallery-img" alt="Imagen 1">
                 <img src="./images/imagen2.jpg" class="gallery-img" alt="Imagen 2">
                 <img src="./images/imagen3.jpg" class="gallery-img" alt="Imagen 3">
                 <img src="./images/imagen4.jpg" class="gallery-img" alt="Imagen 4">
-              </div>
-              </div>
-              
-              <!-- Modal para ver la imagen en grande -->
-              <div id="imageModal" class="modal">
-                <span class="close">&times;</span>
-                <img class="modal-content" id="modalImg">
-                <div id="caption"></div>
-              </div>
-              
+            </div>
+        </div>
+        <!-- Modal para ver la imagen en grande -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+            <div id="caption"></div>
         </div>
     </section>
+
+   
 
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 Riaño 360. Todos los derechos reservados.</p>
     </footer>
+
     <script>
-        // Obtener los elementos necesarios
-var modal = document.getElementById("imageModal");
-var modalImg = document.getElementById("modalImg");
-var captionText = document.getElementById("caption");
-var span = document.getElementsByClassName("close")[0];
+        // Modal de imágenes
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImg");
+        var captionText = document.getElementById("caption");
+        var span = document.getElementsByClassName("close")[0];
+        var images = document.getElementsByClassName("gallery-img");
 
-// Añadir evento a cada imagen de la galería
-var images = document.getElementsByClassName("gallery-img");
-for (var i = 0; i < images.length; i++) {
-  images[i].onclick = function() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
-  }
-}
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
 
-// Cerrar el modal cuando se hace clic en el botón de cerrar
-span.onclick = function() {
-  modal.style.display = "none";
-}
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
 
-// Cerrar el modal si se hace clic fuera de la imagen
-modal.onclick = function(e) {
-  if (e.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
+        modal.onclick = function(e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
- 
-
-
 </body>
 </html>
