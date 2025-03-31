@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riaño 360</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabecera con imagen destacada -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Explora Riaño 360</h1>
+            <p>Un recorrido único por la belleza natural de los pueblos de Riaño</p>
+            <a href="#explore" class="button">Explora Riaño 360</a>
+        </div>
+    </header>
+
+    <!-- Sección de presentación -->
+    <section class="about" id="explore">
+        <div class="container">
+            <h2>Sobre Riaño 360</h2>
+            <p>Riaño 360 es un recorrido de 96km que conecta ocho pueblos alrededor del embalse de Riaño. Creado para descentralizar el turismo y destacar el valor de la naturaleza y la cultura local.</p>
+        </div>
+    </section>
+
+    <!-- Mapa del recorrido -->
+    <section class="map">
+        <div class="container">
+            <h2>El Recorrido</h2>
+            <img src="./images/mapa-ruta.jpeg" alt="Mapa del recorrido de Riaño 360" class="map-image">
+            <p>Conoce el recorrido y los puntos clave del trayecto que pasa por Vegacerneja, Liegos, Salamón, Las Salas, Horcadas, Carande y Boca de Huérgano.</p>
+        </div>
+         <!-- Sección de Tracks -->
+    <section class="tracks">
+      <div class="container">
+          <h2>Tracks Destacados</h2>
+          <p>Descubre rutas y tracks detallados para que puedas explorar Riaño 360 con toda la información necesaria.</p>
+      </div>
+  </section>
+        <div class="maps-iframe">
+            <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=62876645&elevation=off&images=off&maptype=H" width="600" height="500"></iframe>
+            <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=193125318&elevation=off&images=off&maptype=H" width="600" height="500"></iframe>
+            <iframe frameBorder="0" scrolling="no" src="https://es.wikiloc.com/wikiloc/embedv2.do?id=193444607&elevation=off&images=off&maptype=H" width="600" height="500"></iframe>
+        </div>
+    </section>
+<!-- Sección del Documental -->
+<section class="documental">
+    <div class="container">
+        <h2>Documental Riaño 360</h2>
+        <p>Sumérgete en la historia, cultura y paisajes de la ruta Riaño 360 con este documental completo.</p>
+        <div class="video-container">
+            <iframe width="100%" height="500" src="https://www.youtube.com/embed/yd5JZoaSuWU" 
+                    title="Documental Riaño 360" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+    <!-- Galería de imágenes -->
+    <section class="gallery">
+        <div class="container">
+            <h2>Galería de Imágenes</h2>
+            <div class="gallery-images">
+                <img src="./images/imagen1.jpg" class="gallery-img" alt="Imagen 1">
+                <img src="./images/imagen2.jpg" class="gallery-img" alt="Imagen 2">
+                <img src="./images/imagen3.jpg" class="gallery-img" alt="Imagen 3">
+                <img src="./images/imagen4.jpg" class="gallery-img" alt="Imagen 4">
+            </div>
+        </div>
+        <!-- Modal para ver la imagen en grande -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+            <div id="caption"></div>
+        </div>
+    </section>
+
+   
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Riaño 360. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Modal de imágenes
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImg");
+        var captionText = document.getElementById("caption");
+        var span = document.getElementsByClassName("close")[0];
+        var images = document.getElementsByClassName("gallery-img");
+
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        modal.onclick = function(e) {
+            if (e.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
